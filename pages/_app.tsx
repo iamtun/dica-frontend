@@ -1,10 +1,10 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Quicksand } from '@next/font/google'
 
 const inter = Quicksand({
-  weight: '500',
+  weight: '400',
   subsets: ['latin']
 })
 
