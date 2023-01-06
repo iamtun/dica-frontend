@@ -1,20 +1,30 @@
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import React from "react"
-import Header from "../../components/Question/Header";
+import QuestionItem from "../../components/Question";
 
-import Avatar from "../../assets/images/avatar.png";
-
-const question = {
-    name: "GR Học tập",
-    author: "LooBoo",
-    tag: "#Vật lý - 9",
-    avatar: Avatar,
-    timeAgo: "2 giờ trước",
-}
-
-const QuestionDetail: React.FC = () => {
+const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
     return <div className="container">
-        <Header name={question.name} author={question.author} tag={question.tag} avatar={question.avatar} timeAgo={question.timeAgo} />
+        <QuestionItem {...question} />
     </div>
 }
 
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const question = {
+        header: {
+            name: "Cộng đồng vật lý Dicamon",
+            author: "LooBoo",
+            tag: "#Vật lý - 9",
+            timeAgo: "2 giờ trước",
+        },
+        title : "Các bạn giúp mình giải bài này với ạ",
+        content: "https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg",
+    }
+
+    return {
+        props: {
+            question
+        }
+    }
+}
 export default QuestionDetail;

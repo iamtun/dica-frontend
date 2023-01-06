@@ -3,9 +3,9 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Quicksand } from '@next/font/google'
 
-const inter = Quicksand({
+const quicksand = Quicksand({
   weight: '400',
-  subsets: ['latin']
+  subsets: ['latin', 'vietnamese']
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     </Head>
     <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: ${quicksand.style.fontFamily};
         }
       `}</style>
     <Component {...pageProps} />

@@ -1,0 +1,36 @@
+$margin-fit: 12px;
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 16px $margin-fit;
+}
+
+.content {
+    margin-left: 8px;
+}
+
+.content_top {
+    strong {
+        font-size: 14px;
+        font-weight: 700 !important;
+    }
+
+    span {
+        background-color: #ECECEC;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        padding: 4px;
+        margin-left: 4px;
+    }
+}
+
+.content_bottom {
+    span {
+        font-size: 14px;
+    }
+    b {
+        padding: 0 4px;
+    }
+}
