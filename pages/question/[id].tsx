@@ -1,6 +1,6 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import React from "react"
-import QuestionItem from "../../components/Question";
+import QuestionItem from "@/components/Question";
 
 const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
     return <div className="container">

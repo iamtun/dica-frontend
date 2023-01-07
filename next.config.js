@@ -10,6 +10,7 @@ const nextConfig = {
         hostname: '**.giainhanh.io',
       },
     ],
+    domains: ["giainhanh.io"]
   },
 }
 

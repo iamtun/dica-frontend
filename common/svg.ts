@@ -1,2 +1,2 @@
-import ROTATE from '../assets/icons/rotate.svg';
+import ROTATE from '@/assets/icons/rotate.svg';
 export { ROTATE };
