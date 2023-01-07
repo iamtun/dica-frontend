@@ -1,5 +1,6 @@
 import React from "react"
-import ButtonViewReply from "../Button/ButtonViewReply";
+import QuestionComment from "./Comment";
+import QuestionControl from "./Control";
 import Header, { IHeader } from "./Header"
 import ImageQuestion from "./Image";
 
@@ -16,17 +17,14 @@ interface IQuestionItem {
 const QuestionItem: React.FC<IQuestionItem> = ({ header, title, content, reply, comment }) => {
     return <div className={styles.container}>
         <Header {...header} />
+
         <p className={styles.title}>{title}</p>
+
         <ImageQuestion image={content}/>
         
-        <div className={styles.bottom}>
-            <ButtonViewReply/>
-
-            {/* icons right */}
-            <div>
-
-            </div>
-        </div>
+        <QuestionControl/>
+        
+        <QuestionComment comment={comment}/>
     </div>
 }
 

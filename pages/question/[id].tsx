@@ -19,6 +19,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         },
         title : "Các bạn giúp mình giải bài này với ạ",
         content: "https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg",
+        comment: 14,
     }
 
     return {

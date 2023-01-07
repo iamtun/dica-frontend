@@ -1,0 +1,21 @@
+$margin-fit: 0 20px 0 12px;
+.bottom {
+    margin-top: 24px;
+    margin: $margin-fit;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon_three_dot {
+    margin-left: 20px;
+    padding: 0 4px;
+}
+
+.__button {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
