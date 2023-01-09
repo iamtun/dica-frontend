@@ -1,11 +1,16 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import React from "react"
 import QuestionItem from "@/components/Question";
+import LayoutPageDetail from "@/components/layout/layout-page-detail";
 
 const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
-    return <div className="container">
-        <QuestionItem {...question} />
-    </div>
+    return (
+        <LayoutPageDetail> 
+            <div className="container">
+                <QuestionItem {...question} />
+            </div>
+        </LayoutPageDetail>
+    )
 }
 
 
@@ -17,7 +22,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
             tag: "#Vật lý - 9",
             timeAgo: "2 giờ trước",
         },
-        title : "Các bạn giúp mình giải bài này với ạ",
+        title: "Các bạn giúp mình giải bài này với ạ",
         content: "https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg",
         comment: 14,
     }

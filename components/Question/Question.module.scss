@@ -2,6 +2,12 @@ $margin-fit: 0 20px 0 12px;
 
 .container {
     margin-top: 20px;
+   
+    @media only screen and (min-width: 896px) {
+        padding: 0 24px;
+        border: 2px solid #ECF0F2;
+        border-radius: 12px;
+    }
 }
 
 .title {
