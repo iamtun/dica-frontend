@@ -4,11 +4,8 @@
   box-sizing: border-box;
 }
 
-.container {
-  //mobile
-  @media only screen and (min-width: 360px) and (max-width: 896px) {
-    margin: 0 8px;
-  }
+body {
+  height: 100vh;
 }
 
 .col {

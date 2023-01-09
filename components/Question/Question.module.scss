@@ -1,12 +1,18 @@
 $margin-fit: 0 20px 0 12px;
 
-.container {
+.container { 
     margin-top: 20px;
-   
+    
+    //web
     @media only screen and (min-width: 896px) {
-        padding: 0 24px;
+        padding: 20px 24px;
         border: 2px solid #ECF0F2;
         border-radius: 12px;
+    }
+
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        margin: 0 8px;
     }
 }
 

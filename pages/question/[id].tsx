@@ -6,9 +6,9 @@ import LayoutPageDetail from "@/components/layout/layout-page-detail";
 const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
     return (
         <LayoutPageDetail> 
-            <div className="container">
+            {/* <div className="container"> */}
                 <QuestionItem {...question} />
-            </div>
+            {/* </div> */}
         </LayoutPageDetail>
     )
 }

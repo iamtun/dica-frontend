@@ -1,11 +1,14 @@
-$margin-fit: 0 20px 0 12px;
+$margin-fit: 24px 16px 0 10px;
 .bottom {
-    margin-top: 24px;
-    margin: $margin-fit;
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        margin: $margin-fit;
+    }
 }
 
 .icon_three_dot {
