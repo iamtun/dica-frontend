@@ -3,7 +3,11 @@ $margin-fit: 12px;
 .container {
     display: flex;
     align-items: center;
-    padding: 16px $margin-fit;
+    padding: 16px 0;
+
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        padding: 16px $margin-fit;
+    }
 }
 
 .content {

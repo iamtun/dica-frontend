@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react"
-import AvatarIMG from "../../../assets/images/avatar.svg";
+import AvatarIMG from "@/assets/images/avatar.svg";
 
 import styles from "./Header.module.scss";
 import { Avatar } from 'antd';

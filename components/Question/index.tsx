@@ -2,7 +2,7 @@ import React from "react"
 import QuestionComment from "./Comment";
 import QuestionControl from "./Control";
 import Header, { IHeader } from "./Header"
-import ImageQuestion from "./Image";
+import QuestionImage from "./Image";
 
 import styles from "./Question.module.scss";
 
@@ -20,11 +20,11 @@ const QuestionItem: React.FC<IQuestionItem> = ({ header, title, content, reply, 
 
         <p className={styles.title}>{title}</p>
 
-        <ImageQuestion image={content}/>
+        <QuestionImage image={content}/>
         
         <QuestionControl/>
         
-        <QuestionComment comment={comment}/>
+        <QuestionComment comment={comment} marginTop={24}/>
     </div>
 }
 

@@ -20,5 +20,10 @@ $margin-fit: 0 20px 0 12px;
     font-size: 20px;
     font-weight: 500;
     margin: $margin-fit;
+    margin-left: 0;
+
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        margin: $margin-fit;
+    }
 }
 

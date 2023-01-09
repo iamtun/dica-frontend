@@ -1,7 +1,8 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import React from "react"
 import QuestionItem from "@/components/Question";
-import LayoutPageDetail from "@/components/layout/layout-page-detail";
+import LayoutPageDetail from "@/components/Layout/layout-page-detail";
+import Answer from "@/components/Answer";
 
 const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
     return (
@@ -9,6 +10,8 @@ const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideP
             {/* <div className="container"> */}
                 <QuestionItem {...question} />
             {/* </div> */}
+
+            <Answer />
         </LayoutPageDetail>
     )
 }

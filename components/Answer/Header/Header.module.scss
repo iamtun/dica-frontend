@@ -1,0 +1,39 @@
+.container {
+    height: 56px;
+    width: 100%;
+    border-bottom: 2px solid #EEF2F4;
+    align-items: center;
+    padding: 0 24px;
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        padding: 0 12px;
+    }
+}
+
+.__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 896px) {
+        margin-left: 4px;
+    }
+}
+
+._top {
+    font-weight: 700;
+    font-size: 12px ;
+    line-height: 15px;
+}
+.__accepted {
+    font-weight: 500;
+    font-size: 12px ;
+    line-height: 15px;
+}
+
+.__username {
+    font-weight: 700;
+    font-size: 12px ;
+    line-height: 15px;
+    margin-left: 4px;
+}

@@ -7,8 +7,10 @@ import QuestionCommentBox from "./CommentBox";
 
 interface IQuestionComment {
     comment: Number;
+    marginTop: Number;
 }
-const QuestionComment: React.FC<IQuestionComment> = ({ comment }) => {
+
+const QuestionComment: React.FC<IQuestionComment> = ({ comment, marginTop }) => {
     const [selected, setSelected] = React.useState(false);
 
     const handleSelected = () => {
@@ -16,7 +18,7 @@ const QuestionComment: React.FC<IQuestionComment> = ({ comment }) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{ marginTop: `${marginTop}px` }}>
             <div onClick={handleSelected} className={styles.__comment}>
                 <Image src={selected ? COMMENT_SELECTED : COMMENT} width={24} height={24} alt="comment-icon" />
                 <div>
