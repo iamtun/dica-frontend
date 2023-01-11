@@ -1,3 +1,4 @@
+import { IAnswer } from "models/answer";
 import React from "react"
 import QuestionImage from "../Question/Image";
 
@@ -6,35 +7,22 @@ import AnswerControl from "./Control";
 import AnswerHeader from "./Header";
 import UserInfo from "./UserInfo";
 
-interface IAnswer {
-    userAccept?: {
-        username: String,
-        tag: String,
-    }
-
-    userAnswer?: {
-        username: String,
-        leaf: Number,
-        help: Number,
-    }
-
-    desc?: String,
-    image?: any,
-    react?: Number,
-    comment?: Number,
+interface IAnswerComponent {
+    answer: IAnswer;
 }
 
-const Answer: React.FC<IAnswer> = () => {
-    return <div className={styles.container}>
-        <AnswerHeader/>
+const Answer: React.FC<IAnswerComponent> = ({ answer }) => {
 
-        <UserInfo/>
+    return <div className={styles.container} >
+        <AnswerHeader isAccepted={true} />
 
-        <p className={styles.__text_content}>{`Juan's words and actions in the first part of the story suggest that he has a strong interest in sewing. In the story, Juan is described as "a quick learner" and "eager to learn" (Steinbeck 2), indicating that he is motivated and interested in acquiring new skills`}</p>
+        <UserInfo user_info={answer.user_info} />
 
-        <QuestionImage image={'https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg'}/>
+        <p className={styles.__text_content}>{answer.content}</p>
 
-        <AnswerControl />
+        <QuestionImage image={'https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg'} />
+
+        <AnswerControl vote_count={answer.vote_count} />
     </div>
 }
 

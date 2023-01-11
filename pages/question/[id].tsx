@@ -1,13 +1,15 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import React, { useEffect } from "react"
+import React from "react"
+import Head from "next/head";
+
 import QuestionItem from "@/components/Question";
 import LayoutPageDetail from "@/components/Layout/layout-page-detail";
 import Answer from "@/components/Answer";
 import request from "utils/request";
 import { IQuestion } from "models/question";
-import Head from "next/head";
+import { IAnswer, IAnswers } from "models/answer";
 
-const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
+const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question, answers }) => {
 
     return (
         <>
@@ -20,7 +22,7 @@ const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideP
                 <QuestionItem {...question} />
                 {/* </div> */}
 
-                <Answer />
+               {answers.map((answer:IAnswer) =>  <Answer answer={answer} key={answer.id}/>)}
             </LayoutPageDetail>
         </>
     )
@@ -31,9 +33,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const { params } = context;
 
     try {
-        const question = await request.get<IQuestion>(`question/info?id=${params?.id}`);
-        console.log(question);
-
+        const questionPromise = request.get<IQuestion>(`question/info?id=${params?.id}`);
+        const answersPromise = request.get<IAnswers>(`/answer/page?question_id=${params?.id}`);
+        
+        const resp = await Promise.all([questionPromise, answersPromise]);
+        
+        const question = resp[0];
+        const answers = resp[1].list;
+        
         const _question = {
             header: {
                 name: "Cộng đồng vật lý Dicamon",
@@ -52,6 +59,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         return {
             props: {
                 question: _question,
+                answers,
             }
         }
     } catch (error) {

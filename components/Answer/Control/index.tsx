@@ -6,18 +6,21 @@ import React from "react";
 
 import styles from "./Control.module.scss";
 
-const AnswerControl: React.FC = () => {
+interface IAnswerControl {
+    vote_count: Number;
+}
+const AnswerControl: React.FC<IAnswerControl> = ({vote_count}) => {
     return (
         <div className={styles.container}>
             <Row>
-                <Col span={6} lg={4}>
+                <Col xs={6} sm={6} md={6} lg={2}>
                     <Row className={styles.__row_action}>
                         <Col span={8} lg={8} >
                             <Image src={HEART} width={24} height={24} alt="heart" />
                         </Col>
 
                         <Col span={8} lg={8}>
-                            <p className={styles.__row_count}>45</p>
+                            <p className={styles.__row_count}>{vote_count.toString()}</p>
                         </Col>
 
                         <Col span={8} lg={8}>
@@ -26,11 +29,11 @@ const AnswerControl: React.FC = () => {
                     </Row>
                 </Col>
 
-                <Col span={14} xs={14} sm={8} lg={8} className={styles.__row_comment}>
+                <Col xs={14} sm={12} md={12} lg={6} className={styles.__row_comment}>
                     <QuestionComment comment={4} marginTop={0} />
                 </Col>
 
-                <Col span={4} xs={4} sm={10} lg={12} className={styles.__row_option}>
+                <Col xs={4} sm={6} md={6} lg={16} className={styles.__row_option}>
                     <Popover placement="rightBottom" title={<span>Title</span>} content={
                         <div>
                             <p>Content</p>
