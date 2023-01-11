@@ -10,11 +10,11 @@ interface IQuestionItem {
     header: IHeader;
     title: String;
     content: any; // image convert to string
-    reply: Number;
+    answer_count: Number;
     comment: Number;
 }
 
-const QuestionItem: React.FC<IQuestionItem> = ({ header, title, content, reply, comment }) => {
+const QuestionItem: React.FC<IQuestionItem> = ({ header, title, content, answer_count, comment }) => {
     return <div className={styles.container}>
         <Header {...header} />
 
@@ -22,7 +22,7 @@ const QuestionItem: React.FC<IQuestionItem> = ({ header, title, content, reply, 
 
         <QuestionImage image={content}/>
         
-        <QuestionControl/>
+        <QuestionControl answer_count={answer_count}/>
         
         <QuestionComment comment={comment} marginTop={24}/>
     </div>

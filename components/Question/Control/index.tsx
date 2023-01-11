@@ -1,12 +1,16 @@
 import { BOOKMARK, BOOKMARK_SELECTED, THREE_DOT } from "@/common/svg";
-import ButtonViewReply from "@/components/Count";
+import Count from "@/components/Count";
 import { Button, Popover } from "antd";
 import Image from "next/image";
 import React from "react";
 
 import styles from "./Control.module.scss";
 
-const QuestionControl: React.FC = () => {
+export interface IQuestionControl {
+    answer_count: Number;
+}
+
+const QuestionControl: React.FC<IQuestionControl> = ({ answer_count }) => {
     const [bookmark, setBookMark] = React.useState(false);
 
     const handleClickBookmark = () => {
@@ -14,9 +18,8 @@ const QuestionControl: React.FC = () => {
     }
     return (
         <div className={styles.bottom}>
-            {/* <ButtonViewReply /> */}
-
-            <Button type="primary" shape="round" size="large" icon={<ButtonViewReply/>} className={styles.__button}>
+            {/* <ButtonViewAnswer/> */}
+            <Button type="primary" shape="round" size="large" icon={<Count answer_count={answer_count} />} className={styles.__button}>
                 <p>Xem câu trả lời</p>
             </Button>
 

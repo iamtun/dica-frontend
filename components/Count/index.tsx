@@ -1,9 +1,10 @@
 import React from "react"
+import { IQuestionControl } from "../Question/Control";
 import styles from "./Count.module.scss";
 
-const Count: React.FC = () => {
+const Count: React.FC<IQuestionControl> = ({ answer_count }) => {
     return <div className={styles.count}>
-        <p>2</p>
+        <p>{answer_count.toString()}</p>
     </div>
 }
 

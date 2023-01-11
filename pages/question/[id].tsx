@@ -1,39 +1,65 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import React from "react"
+import React, { useEffect } from "react"
 import QuestionItem from "@/components/Question";
 import LayoutPageDetail from "@/components/Layout/layout-page-detail";
 import Answer from "@/components/Answer";
+import request from "utils/request";
+import { IQuestion } from "models/question";
+import Head from "next/head";
 
 const QuestionDetail: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ question }) => {
-    return (
-        <LayoutPageDetail> 
-            {/* <div className="container"> */}
-                <QuestionItem {...question} />
-            {/* </div> */}
 
-            <Answer />
-        </LayoutPageDetail>
+    return (
+        <>
+            <Head>
+                <title>{question.title}</title>
+                <meta name="description" content={question.description} />
+            </Head>
+            <LayoutPageDetail>
+                {/* <div className="container"> */}
+                <QuestionItem {...question} />
+                {/* </div> */}
+
+                <Answer />
+            </LayoutPageDetail>
+        </>
     )
 }
 
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    const question = {
-        header: {
-            name: "Cộng đồng vật lý Dicamon",
-            author: "LooBoo",
-            tag: "#Vật lý - 9",
-            timeAgo: "2 giờ trước",
-        },
-        title: "Các bạn giúp mình giải bài này với ạ",
-        content: "https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg",
-        comment: 14,
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const { params } = context;
+
+    try {
+        const question = await request.get<IQuestion>(`question/info?id=${params?.id}`);
+        console.log(question);
+
+        const _question = {
+            header: {
+                name: "Cộng đồng vật lý Dicamon",
+                author: question.user_info.display_name,
+                tag: "#Vật lý - 9",
+                timeAgo: "2 giờ trước",
+            },
+            id: question.id,
+            title: question.title,
+            url_title: question.url_title,
+            content: "https://docdn.giainhanh.io/media/attachments/2023/01/11/442710032203645777.jpeg",
+            comment: question.answer_count,
+            answer_count: question.answer_count,
+        }
+
+        return {
+            props: {
+                question: _question,
+            }
+        }
+    } catch (error) {
+        console.log('Error request question detail', error);
     }
 
     return {
-        props: {
-            question
-        }
+        notFound: true,
     }
 }
 export default QuestionDetail;

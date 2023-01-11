@@ -9,7 +9,7 @@ interface IQuestionImage {
 }
 const QuestionImage: React.FC<IQuestionImage> = ({ image }) => {
     return <div className={styles.container}>
-        <Image src={image} alt="img-question" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 33vw" fill priority className={styles.main}/>
+        <Image src={image} alt="img-question" width={350} height={148} priority className={styles.main}/>
         <Image src={ROTATE} alt="rotate" width={44} height={44} className={styles.rotate} />
     </div>
 }
