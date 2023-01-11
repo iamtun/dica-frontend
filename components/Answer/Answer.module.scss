@@ -6,6 +6,7 @@
     @media only screen and (min-width: 768px) {
         border: 2px solid #ECF0F2;
         border-radius: 12px;
+        padding: 20px 24px;
     }
     
     //mobile
@@ -23,8 +24,13 @@
 
 .__text_content {
     margin-top: 16px;
-    margin-left: 12px;
+    padding: 0 20px;
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
+
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+        padding: 0 12px;
+    }
 }

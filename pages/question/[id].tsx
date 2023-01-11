@@ -51,7 +51,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             id: question.id,
             title: question.title,
             url_title: question.url_title,
-            content: "https://docdn.giainhanh.io/media/attachments/2023/01/11/442710032203645777.jpeg",
+            content: "https://docdn.giainhanh.io/media/attachments/2023/01/11/442746847539233617.jpeg",
             comment: question.answer_count,
             answer_count: question.answer_count,
         }

@@ -20,7 +20,7 @@ const Answer: React.FC<IAnswerComponent> = ({ answer }) => {
 
         <p className={styles.__text_content}>{answer.content}</p>
 
-        <QuestionImage image={'https://docdn.giainhanh.io/media/attachments/2023/01/06/442023579324777297.jpeg'} />
+        <QuestionImage image={'https://docdn.giainhanh.io/media/attachments/2023/01/11/442746847539233617.jpeg'} />
 
         <AnswerControl vote_count={answer.vote_count} />
     </div>

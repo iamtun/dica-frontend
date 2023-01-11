@@ -26,8 +26,8 @@ const AnswerHeader: React.FC<IAnswerHeader> = ({ isAccepted }) => {
                         </Row>
                         <Row>
                             <p className={styles.__accepted}>Xác thực bởi</p>
-                            <p className={styles.__username}>LooBoo</p>
-                            <p className={styles.__username} style={{ color: '#1DACFF' }}>TG</p>
+                            <p className={styles.__username}>Cộng Đồng</p>
+                            <p className={styles.__username} style={{ color: '#1DACFF' }}>CĐ</p>
                         </Row>
                     </Col>
                 </Row>
