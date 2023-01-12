@@ -13,7 +13,7 @@ const LayoutPageDetail: React.FC<ILayoutPageDetail> = ({ children }) => {
             </Col>
             <Col span={8} xs={0} sm={0} md={4} lg={4}>
                 <div className="col-right">
-                    <h3>Col-right</h3>
+                    {/* <h3>Col-right</h3> */}
                 </div>
             </Col>
         </Row>

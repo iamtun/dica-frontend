@@ -4,6 +4,7 @@ import { Quicksand } from '@next/font/google'
 
 import { ConfigProvider } from 'antd'
 import '../styles/globals.scss'
+import HeaderPage from '@/components/Header'
 
 const quicksand = Quicksand({
   weight: '400',
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       }}
     >
+      <HeaderPage />
       <Component {...pageProps} />
     </ConfigProvider>
   </>
