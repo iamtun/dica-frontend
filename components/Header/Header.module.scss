@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.04);
+}
+
+.__top {
+    //desktop
+    @media only screen and  (min-width: 768px) {
+        padding: 12px 152px;
+        > img {
+            width: 136px;
+            height: 23px;
+        }
+    }
+
+    //mobile
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+       padding: 24px 20px;
+    }
+}

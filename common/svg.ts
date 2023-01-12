@@ -13,9 +13,10 @@ import HEART_SELECTED from "@/assets/icons/heart-selected.svg";
 import DISLIKE from "@/assets/icons/dislike.svg";
 import DISLIKE_SELECTED from "@/assets/icons/dislike-selected.svg";
 
+import LOGO from "@/assets/images/logo.svg";
 export { 
     ROTATE, BOOKMARK, BOOKMARK_SELECTED, THREE_DOT, 
     COMMENT, COMMENT_SELECTED, ARROW_UP, ARROW_DOWN,
     ARROW_UP_SEND, ACCEPTED, HEART, HEART_SELECTED,
-    DISLIKE, DISLIKE_SELECTED 
+    DISLIKE, DISLIKE_SELECTED, LOGO
 };
