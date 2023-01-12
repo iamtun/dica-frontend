@@ -1,33 +1,38 @@
 import Image from "next/image";
 import React from "react"
-import AvatarIMG from "@/assets/images/avatar.svg";
 
 import styles from "./Header.module.scss";
 import { Avatar } from 'antd';
+import LayoutHeaderPageDetail from "@/components/Layout/layout-header-page-detail";
+import { ITag } from "models/tag";
+
 export interface IHeader {
     avatar?: any;
     name: String;
-    tag: String;
+    tags: [ITag];
     author: String;
     timeAgo: String;
 }
 
-const Header: React.FC<IHeader> = ({ avatar, name, tag, author, timeAgo }) => {
+const Header: React.FC<IHeader> = ({ avatar, name, tags, author, timeAgo }) => {
     return (
-        <div className={styles.container}>
-            <Avatar shape="square" size={32} icon={<Image src={AvatarIMG} width={32} height={32} alt="logo" />} />
-            <div className={styles.content}>
-                <div className={styles.content_top}>
-                    <strong>{name}</strong>
-                    <span>{tag}</span>
-                </div>
-                <div className={styles.content_bottom}>
-                    <span>Đăng bởi</span>
-                    <b>{author}</b>
-                    <span>{timeAgo}</span>
-                </div>
-            </div>
-        </div>
+        <LayoutHeaderPageDetail
+            sizeTop={0}
+            left={<Avatar 
+                    shape="square" 
+                    size={32} 
+                    className={styles.__avatar}
+                    icon={<Image src={'https://docdn.giainhanh.io/media/avatars/bear-2.png'} width={32} height={32} alt="logo" />} 
+                />
+            }
+            rightTop={<div className={styles.content_top}>
+                <b>{author}</b>
+                <span>{timeAgo}</span>
+            </div>}
+            rightDown={<div className={styles.content_bottom}>
+                {tags.map(tag => <span key={tag.slug_name}>{tag.display_name}</span>)}
+            </div>}
+        />
     )
 }
 

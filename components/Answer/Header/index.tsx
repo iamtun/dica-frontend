@@ -12,15 +12,19 @@ interface IAnswerHeader {
 const AnswerHeader: React.FC<IAnswerHeader> = ({ isAccepted }) => {
     return (
         <Row className={styles.container}>
-            <Col span={12} xs={10} sm={12} md={12} lg={18}>
+            {/* xs={9} sm={12} md={12} lg={16} */}
+            <Col >
                 <p className={styles.__title}>CÂU TRẢ LỜI:</p>
             </Col>
-            {isAccepted && <Col span={12} xs={14} sm={12} md={12} lg={6} >
+            {/* xs={15} sm={12} md={12} lg={8}  */}
+            {isAccepted && <Col >
                 <Row>
-                    <Col span={6} xs={5} sm={6} md={6} lg={4}>
+                    {/* xs={4} sm={6} md={6} lg={4}  */}
+                    <Col style={{ marginRight: 4 }}>
                         <Image src={ACCEPTED} width={32} height={32} alt="accepted" />
                     </Col>
-                    <Col span={18} xs={19} sm={18} md={18} lg={20} className={styles.__right} >
+                    {/* xs={20} sm={18} md={18} lg={20} */}
+                    <Col className={styles.__right} >
                         <Row>
                             <p className={styles._top}>TRẢ LỜI HAY</p>
                         </Row>

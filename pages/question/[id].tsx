@@ -43,9 +43,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         
         const _question = {
             header: {
-                name: "Cộng đồng vật lý Dicamon",
                 author: question.user_info.display_name,
-                tag: "#Vật lý - 9",
+                tags: question.tags,
                 timeAgo: "2 giờ trước",
             },
             id: question.id,

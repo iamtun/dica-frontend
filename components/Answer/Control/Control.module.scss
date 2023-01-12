@@ -1,19 +1,27 @@
 .container {
-    padding: 14px 16px;
+    padding: 8px 0;
     margin-top: 20px;
     width: 100%;
-    height: 48px;
+    // height: 48px;
     border-top: 2px solid #EEF2F4;
     border-bottom: 2px solid #EEF2F4;
 }
 
-.__row_action {
+.__row {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+
+.__row_action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+}
+
 .__row_count {
-    width: 24px;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -22,11 +30,5 @@
 }
 
 .__row_comment {
-    display: flex;
-    justify-content: center;
-}
-
-.__row_option {
-    display: flex;
-    justify-content: flex-end;
+    margin-left: 44px;
 }

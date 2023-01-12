@@ -1,7 +1,7 @@
 .container {
     padding: 0 4px;
     margin-top: 20px;
-
+    
     //desktop
     @media only screen and (min-width: 768px) {
         border: 2px solid #ECF0F2;
@@ -16,15 +16,13 @@
     }
 }
 
-.--accepted{
+.__accepted{
     background: #FFFFFF;
     border: 2px solid #0ECC15;
     border-radius: 8px;
 }
 
 .__text_content {
-    margin-top: 16px;
-    padding: 0 20px;
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;

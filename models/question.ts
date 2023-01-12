@@ -1,3 +1,4 @@
+import { ITag } from "./tag";
 import { IUserInfo } from "./userInfo";
 
 export interface IQuestion {
@@ -8,4 +9,5 @@ export interface IQuestion {
     user_info: IUserInfo;
     answer_count: Number;
     description: String;
+    tags: [ITag];
 }
