@@ -1,20 +1,21 @@
 $margin-fit: 12px;
 
-.container {
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-
-    @media only screen and (min-width: 360px) and (max-width: 768px) {
-        padding: 16px $margin-fit;
-    }
+.__avatar {
+    margin-top: 5px;
 }
 
 .content {
     margin-left: 8px;
 }
 
-.content_top {
+.content_top{
+    span {
+        font-size: 14px;
+        margin-left: 4px;
+    }
+}
+
+.content_bottom  {
     strong {
         font-size: 14px;
         font-weight: 700 !important;
@@ -25,16 +26,11 @@ $margin-fit: 12px;
         border-radius: 4px;
         font-weight: 500;
         font-size: 12px;
-        padding: 4px;
-        margin-left: 4px;
+        line-height: 15px;
+        padding: 2px;
     }
-}
 
-.content_bottom {
-    span {
-        font-size: 14px;
-    }
-    b {
-        padding: 0 4px;
-    }
+    span:nth-child(2) {
+        margin-left: 4px;
+    } 
 }
